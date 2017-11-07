@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Request Path</h2>
+  {{path}}
+  <h2>Env Vars</h2>
+  <ul>
+    {% for key, value in envs.items() %}
+      <li>{{key}}: {{value}}</li>
+   {% endfor %}
+  </ul>
+</body>
+</html>
