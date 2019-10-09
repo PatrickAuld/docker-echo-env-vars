@@ -10,6 +10,7 @@ app = Flask(__name__)
 @app.route('/<path:path>')
 def hello_world(path):
     envs = os.environ
+    # If there is a whitelist then filter all other env vars
     if os.getenv("ENV_WHITELIST"):
         whitelist = os.getenv("ENV_WHITELIST").split(",")
         envs = {k: v for (k, v) in envs.items() if k in whitelist}
